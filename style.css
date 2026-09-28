@@ -1,409 +1,492 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: "Poppins", sans-serif;
-    background-color: #1F1F1F;
-    color: #ffff;
+html {
+    scroll-behavior: smooth;
 }
 
-header{
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #1F1F1F;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 0;
-    background: rgba(47,79,111,.75);
+    padding: 12px 20px;
+    background: rgba(47, 79, 111, 0.85);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
 }
 
-header h1{
-    font-size: 2.5rem;
+header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     color: #fff;
     text-align: center;
+    line-height: 1.2;
 }
 
-header a{
+header a {
     color: rgb(185, 182, 182);
     text-decoration: none;
 }
 
-.informacoes{
+.informacoes {
     width: 100%;
-    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.main{
-    padding-top: 220px;
+.main {
     width: 100%;
-    min-height: 85vh;
+    min-height: 100vh;
+
+    padding: 140px 20px 80px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 160px 80px;
+
+    text-align: center;
+
     background:
-        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+        linear-gradient(
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0.68)
+        ),
         url("images/osmio.jpg");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 70px;
+
+    margin-bottom: 50px;
 }
 
-.main h1:first-child{
-    font-size: 3rem;
+.main h1 {
+    color: #fff;
+    text-align: center;
+}
+
+.main h1:first-child {
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 10px;
 }
 
-.main h1:last-of-type{
-    font-size: 4rem;
+.main h1:last-of-type {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
     margin-bottom: 25px;
 }
 
-.main p{
-    width: 70%;
-    font-size: 1.3rem;
-    line-height: 1.8;
-}
-
-.informacoes h1{
+.main p {
+    width: min(700px, 90%);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.7;
     text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
 }
 
-.informacoes p{
-    width: 80%;
-    text-align: center;
-    line-height: 1.6;
-    color: #ffff;
-    margin-bottom: 20px;
-}
+.tabela-osmio {
+    width: min(1000px, 90%);
+    margin: 0 auto 60px;
 
-.tabela-osmio{
-    margin: 0 auto;
-    width: 80%;
     border-collapse: collapse;
+
     background: #2F4F6F;
-    box-shadow: 0 0 10px rgba(0,0,0,.15);
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
 }
 
-.tabela-osmio th{
+.tabela-osmio th {
     background: #1f4e79;
     color: white;
     padding: 15px;
     font-size: 18px;
+    text-align: left;
 }
 
-.tabela-osmio td{
-    padding: 12px;
-    border: 1px solid #ddd;
+.tabela-osmio td {
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.tabela-osmio tr:nth-child(even){
+.tabela-osmio tr:nth-child(even) {
+    background: #345979;
+}
+
+.tabela-osmio tr:nth-child(odd) {
     background: #2F4F6F;
 }
 
-.descoberta, .encontrado, .curiosidades, .seguranca{
-    margin: 40px auto;
-    background: #2F4F6F;
-    padding: 100px;
-    border-radius: 10px;
-}
-
-.caracteristicas, .aplicacoes, .isotopos {
-    margin: 40px auto;
-    padding: 100px;
-    border-radius: 10px;
-}
-
-.caracteristicas h1, .aplicacoes h1, .isotopos h1 {
-    font-size: 40px;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.caracteristicas li, .aplicacoes li, .isotopos li {
-    width: 50%;
-    margin: 0 auto;
-    list-style: square inside;
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.caracteristicas p, .aplicacoes p, .isotopos p {
-    font-size: 20px;
-    font-weight: 600;
-    width: 50%;
-    margin: 0 auto;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.descoberta h1, .encontrado h1, .curiosidades h1, .seguranca h1 {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.descoberta p, .encontrado p, .curiosidades p, .seguranca p{
-    font-size: 20px;
-    font-weight: 600;
-    width: 50%;
-    margin: 0 auto;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.descoberta li, .encontrado li, .curiosidades li, .seguranca li{
-    width: 50%;
-    margin: 0 auto;
-    list-style: square inside;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
+.descoberta,
+.encontrado,
+.curiosidades,
+.seguranca,
+.caracteristicas,
+.aplicacoes,
+.isotopos,
 .resumo {
+    width: min(1100px, 90%);
     margin: 40px auto;
-    padding: 100px;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
+.descoberta,
+.encontrado,
+.curiosidades,
+.seguranca {
+    background: #2F4F6F;
+    padding: clamp(30px, 6vw, 80px);
+}
+
+.caracteristicas,
+.aplicacoes,
+.isotopos,
+.resumo {
+    padding: clamp(30px, 6vw, 80px);
+}
+
+.descoberta h1,
+.encontrado h1,
+.curiosidades h1,
+.seguranca h1,
+.caracteristicas h1,
+.aplicacoes h1,
+.isotopos h1,
 .resumo h1 {
-    font-size: 40px;
-    text-align: center;
     color: #fff;
-    margin-bottom: 20px;
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 25px;
+}
+
+.descoberta p,
+.encontrado p,
+.curiosidades p,
+.seguranca p,
+.caracteristicas p,
+.aplicacoes p,
+.isotopos p,
+.resumo p {
+    width: min(850px, 100%);
+    margin: 0 auto 20px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.7;
+}
+
+.descoberta ul,
+.encontrado ul,
+.curiosidades ul,
+.seguranca ul,
+.caracteristicas ul,
+.aplicacoes ul,
+.isotopos ul {
+    width: min(850px, 100%);
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.descoberta li,
+.encontrado li,
+.curiosidades li,
+.seguranca li,
+.caracteristicas li,
+.aplicacoes li,
+.isotopos li {
+    width: 100%;
+
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+
+    color: #fff;
 }
 
 .resumo p {
-    font-size: 20px;
-    font-weight: 500;
-    width: 50%;
-    margin: 0 auto;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 20px;
     margin-top: 20px;
 }
 
 .resumo a {
-    font-size: 25px;
-    color: #2F4F6F
+    font-size: inherit;
+    color: #6fa8dc;
+    font-weight: 700;
 }
 
-.footer{
+.footer {
+    width: 100%;
+
     background: #2F4F6F;
     color: #F8F9FA;
+
     text-align: center;
-    padding: 35px 20px;
+
+    padding: 40px 20px;
+
     margin-top: 60px;
 }
 
-.footer h3{
-    font-size: 28px;
+.footer h3 {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
     margin-bottom: 10px;
 }
 
-.footer p{
-    font-size: 16px;
-    margin: 8px 0;
+.footer p {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    margin: 8px auto;
+    max-width: 700px;
+    line-height: 1.6;
 }
 
-.footer hr{
-    width: 60%;
+.footer hr {
+    width: min(600px, 80%);
     margin: 20px auto;
-    border: 1px solid #C0C0C0;
+    border: 0;
+    border-top: 1px solid #C0C0C0;
 }
 
-.footer .copyright{
+.footer .copyright {
     color: #C0C0C0;
-    font-size: 14px;
+    font-size: 0.85rem;
 }
 
-@media (max-width: 1024px){
+/* =========================
+   RESPONSIVIDADE
+========================= */
 
-    .informacoes,
-    .descoberta,
-    .caracteristicas,
-    .encontrado,
-    .aplicacoes,
-    .curiosidades,
-    .isotopos,
-    .seguranca,
-    .resumo{
+@media (max-width: 768px) {
+
+    header {
+        padding: 14px 15px;
+    }
+
+    .main {
+        min-height: 90vh;
+        padding: 130px 20px 60px;
+        margin-bottom: 35px;
+    }
+
+    .main p {
         width: 95%;
+        line-height: 1.6;
     }
 
-    .tabela-osmio{
-        width: 100%;
-    }
-
-    .descoberta,
-    .caracteristicas,
-    .encontrado,
-    .aplicacoes,
-    .curiosidades,
-    .isotopos,
-    .seguranca,
-    .resumo{
-        padding: 60px 40px;
-    }
-
-    .descoberta p,
-    .encontrado p,
-    .curiosidades p,
-    .seguranca p,
-    .caracteristicas p,
-    .aplicacoes p,
-    .isotopos p,
-    .resumo p,
-    .descoberta li,
-    .encontrado li,
-    .curiosidades li,
-    .seguranca li,
-    .caracteristicas li,
-    .aplicacoes li,
-    .isotopos li{
-        width: 90%;
-    }
-}
-
-@media (max-width: 768px){
-
-    header{
-        padding: 18px;
-    }
-
-    header h1{
-        font-size: 2rem;
-    }
-
-    .informacoes{
-        width: 95%;
-    }
-
-    .informacoes h1{
-        font-size: 2rem;
-    }
-
-    .informacoes p{
-        width: 95%;
-        font-size: 1rem;
-    }
-
-    .tabela-osmio{
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .descoberta,
-    .caracteristicas,
-    .encontrado,
-    .aplicacoes,
-    .curiosidades,
-    .isotopos,
-    .seguranca,
-    .resumo{
-        width: 95%;
-        padding: 40px 20px;
-    }
-
-    .descoberta h1,
-    .caracteristicas h1,
-    .encontrado h1,
-    .aplicacoes h1,
-    .curiosidades h1,
-    .isotopos h1,
-    .seguranca h1,
-    .resumo h1{
-        font-size: 2rem;
-    }
-
-    .descoberta p,
-    .encontrado p,
-    .curiosidades p,
-    .seguranca p,
-    .caracteristicas p,
-    .aplicacoes p,
-    .isotopos p,
-    .resumo p,
-    .descoberta li,
-    .encontrado li,
-    .curiosidades li,
-    .seguranca li,
-    .caracteristicas li,
-    .aplicacoes li,
-    .isotopos li{
-        width: 100%;
-        font-size: 1rem;
-    }
-
-    .footer h3{
-        font-size: 1.5rem;
-    }
-
-    .footer p{
-        font-size: .95rem;
-    }
-}
-
-@media (max-width: 480px){
-
-    header h1{
-        font-size: 1.7rem;
-    }
-
-    .informacoes h1,
-    .descoberta h1,
-    .caracteristicas h1,
-    .encontrado h1,
-    .aplicacoes h1,
-    .curiosidades h1,
-    .isotopos h1,
-    .seguranca h1,
-    .resumo h1{
-        font-size: 1.7rem;
-    }
-
-    .informacoes p,
-    .descoberta p,
-    .caracteristicas p,
-    .encontrado p,
-    .aplicacoes p,
-    .curiosidades p,
-    .isotopos p,
-    .seguranca p,
-    .resumo p,
-    .descoberta li,
-    .caracteristicas li,
-    .encontrado li,
-    .aplicacoes li,
-    .curiosidades li,
-    .isotopos li,
-    .seguranca li{
-        font-size: .95rem;
+    .tabela-osmio {
+        width: 94%;
+        font-size: 0.9rem;
     }
 
     .tabela-osmio th,
-    .tabela-osmio td{
+    .tabela-osmio td {
         padding: 10px;
-        font-size: .9rem;
     }
 
-    .footer{
+    .tabela-osmio {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabela-osmio thead,
+    .tabela-osmio tbody,
+    .tabela-osmio tr {
+        width: 100%;
+    }
+
+    .descoberta,
+    .encontrado,
+    .curiosidades,
+    .seguranca,
+    .caracteristicas,
+    .aplicacoes,
+    .isotopos,
+    .resumo {
+        width: 92%;
+        margin: 30px auto;
+        padding: 35px 25px;
+    }
+
+    .descoberta p,
+    .encontrado p,
+    .curiosidades p,
+    .seguranca p,
+    .caracteristicas p,
+    .aplicacoes p,
+    .isotopos p,
+    .resumo p {
+        width: 100%;
+    }
+
+    .descoberta ul,
+    .encontrado ul,
+    .curiosidades ul,
+    .seguranca ul,
+    .caracteristicas ul,
+    .aplicacoes ul,
+    .isotopos ul {
+        width: 100%;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 12px 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .main {
+        min-height: 90vh;
+
+        padding:
+            110px
+            15px
+            50px;
+    }
+
+    .main h1:first-child {
+        font-size: 2rem;
+    }
+
+    .main h1:last-of-type {
+        font-size: 2.7rem;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .main p {
+        width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .tabela-osmio {
+        width: 94%;
+        margin-bottom: 40px;
+    }
+
+    .tabela-osmio th,
+    .tabela-osmio td {
+        padding: 9px;
+        font-size: 0.82rem;
+    }
+
+    .descoberta,
+    .encontrado,
+    .curiosidades,
+    .seguranca,
+    .caracteristicas,
+    .aplicacoes,
+    .isotopos,
+    .resumo {
+        width: 94%;
+        padding: 30px 18px;
+        margin: 25px auto;
+    }
+
+    .descoberta h1,
+    .encontrado h1,
+    .curiosidades h1,
+    .seguranca h1,
+    .caracteristicas h1,
+    .aplicacoes h1,
+    .isotopos h1,
+    .resumo h1 {
+        font-size: 1.7rem;
+        line-height: 1.3;
+    }
+
+    .descoberta p,
+    .encontrado p,
+    .curiosidades p,
+    .seguranca p,
+    .caracteristicas p,
+    .aplicacoes p,
+    .isotopos p,
+    .resumo p {
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .descoberta li,
+    .encontrado li,
+    .curiosidades li,
+    .seguranca li,
+    .caracteristicas li,
+    .aplicacoes li,
+    .isotopos li {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        padding: 30px 15px;
+        margin-top: 40px;
+    }
+
+    .footer h3 {
+        font-size: 1.4rem;
+    }
+
+    .footer p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .main h1:first-child {
+        font-size: 1.7rem;
+    }
+
+    .main h1:last-of-type {
+        font-size: 2.3rem;
+    }
+
+    .main p {
+        font-size: 0.88rem;
+    }
+
+    .descoberta,
+    .encontrado,
+    .curiosidades,
+    .seguranca,
+    .caracteristicas,
+    .aplicacoes,
+    .isotopos,
+    .resumo {
+        width: 96%;
         padding: 25px 15px;
+    }
+
+    .tabela-osmio th,
+    .tabela-osmio td {
+        font-size: 0.78rem;
+        padding: 8px;
     }
 }
